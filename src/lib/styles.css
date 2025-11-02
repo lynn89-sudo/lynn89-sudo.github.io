@@ -1,0 +1,25 @@
+* {
+    font-family: Montserrat, Space Grotesk, Futura;
+    text-align: center;
+}
+h1, h2 {
+    font-weight: 800;
+}
+h4, h5, h6, p {
+    font-family: Space Grotesk, Futura;
+}
+
+form {
+    background-color: rgb(73, 2, 73);
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    color: white;
+    input {
+        background-color: purple;
+        font-family: Space Grotesk, Futura;
+        color: white;
+        border-radius: 35px;
+    }
+}
