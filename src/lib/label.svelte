@@ -14,7 +14,7 @@
 <style>
     div {
         position: absolute;
-        top: 0%;
+        top: 0;
         left: 20%;
         right: 20%;
         background-color: pink;
@@ -24,10 +24,15 @@
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
         z-index: 1000;
+
+        user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
     }
 </style>
 {#if activate}
-    <div transition:fly={{y:-200, delay: 2500}}>
+    <div transition:fly={{y:-200, delay: 1300}}>
         <h2>{prop.loc}</h2>
     </div>
 {/if}

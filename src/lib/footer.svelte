@@ -11,13 +11,15 @@
 </script>
 <style>
     div {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        height: 90px;
+        width: 100%;
+        height: 80px;
         color: white;
         background-color: rgb(179, 90, 179);
+        margin: 0;
+    }
+    table {
+        margin: 0;
+        padding-top: 10px;
     }
 </style>
 {#if activate}
@@ -27,6 +29,11 @@
                 <tr>
                     <td>
                         <Clock/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Test</h3>
                     </td>
                 </tr>
             </tbody>
