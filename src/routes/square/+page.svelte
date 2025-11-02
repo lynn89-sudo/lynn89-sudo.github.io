@@ -192,7 +192,7 @@
         }
     }
 </style>
-<br><br>
+<br><br><br><br>
 {#if activate}
     <h1 translate="no" transition:fly={{y:-200, duration: 1000}} id="name">I'M LYNN</h1>
     <h4 id="pronouns"><span transition:slide>She/They</span></h4>
@@ -225,7 +225,7 @@
      </svg>
      <br>
 {/if}
-<Label loc="Hacklyn Square" />
+<Label loc="Hacklyn Square" returnTo = ""/>
 <div style:height=150px><h1 style:opacity=0>Scroll down</h1></div>
 {#if activate}
      <div transition:fly={{y:200, delay: 2000}}>
@@ -252,7 +252,7 @@
             <h2><span style:color="rgb(212, 211, 0)">I'M A</span><br>GRAPHIC <span id="graphic-design">DESIGNER</span></h2>
             <h4>Fun fact: I use Keynote for over 90% of my graphic design work.</h4>
             <br>
-            <button style:background-color="gold" style:color="rgb(107, 107, 1)">See some of my work</button>
+            <button style:background-color="gold" style:color="rgb(107, 107, 1)" onclick={() => {window.location.href = base + "/musee"}}>See some of my work</button>
             <br> <br> <br>
             <img src="vogels/vogels.png" alt="Birds" />
             <!--<img src="ny.jpg" alt="Statue of Liberty" />-->
