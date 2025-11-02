@@ -191,7 +191,7 @@
         }
         @media screen and (max-width: 650px) {
             #research-researcher {
-                font-size: 450px;
+                font-size: 45px;
             }
         }
     }
