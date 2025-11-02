@@ -77,11 +77,13 @@
     }
 
     h1 {
-        span {
-            background-color: rgb(89, 60, 109);
-            color: white;
-            padding: 10px;
-            border-radius: 20px;
+        @media screen and (min-width: 800px) {
+            span {
+                background-color: rgb(89, 60, 109);
+                color: white;
+                padding: 10px;
+                border-radius: 20px;
+            }
         }
     }
 </style>
@@ -114,7 +116,7 @@
 {/if}
 {#if appear}
     <div id="vogel" transition:fly={{delay: 2000, y:100}}>
-        <p>{birdName} can't speak; however, she says hello!</p>
+        {#if !getName}<p>{birdName} can't speak; however, she says hello!</p>{/if}
         <img src="vogels/{birdImgName}.png" alt="Picture of {birdName} the bird"/>
     </div>
 {/if}

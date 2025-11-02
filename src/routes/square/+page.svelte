@@ -62,6 +62,11 @@
             font-size: 150px;
         }
     }
+    @media screen and (max-width: 650px) {
+        #name {
+            font-size: 100px;
+        }
+    }
     #new-york {
         background-color: rgb(39, 139, 143);
         padding-bottom: 0;
@@ -97,6 +102,11 @@
                 font-size: 70px;
             }
         }
+         @media screen and (max-width: 650px) {
+            #web-dev {
+                font-size: 45px;
+            }
+        }
     }
     #graphic {
         background-color: rgb(5, 6, 82);
@@ -121,6 +131,11 @@
         @media screen and (max-width: 900px) {
             #graphic-design {
                 font-size: 70px;
+            }
+        }
+        @media screen and (max-width: 650px) {
+            #graphic-design {
+                font-size: 45px;
             }
         }
     }
@@ -188,6 +203,11 @@
         @media screen and (max-width: 900px) {
             #research-researcher {
                 font-size: 70px;
+            }
+        }
+        @media screen and (max-width: 650px) {
+            #research-researcher {
+                font-size: 45px;
             }
         }
     }
