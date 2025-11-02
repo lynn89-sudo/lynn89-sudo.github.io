@@ -90,10 +90,10 @@
 
     <div transition:fly={{y:-100, easing:cubicInOut, duration: 700}}>
         <h1 style:font-weight=900px>WELCOME TO <span>HACKLYN</span></h1><br>
-        <h4>{prompt}</h4>
+        <h3>{prompt}</h3>
         <br>
     </div>
-    <br><br>
+    <br>
     <div transition:slide={{delay: 1000, y:100, easing:cubicInOut}}>
         {#if getName}
             <form onsubmit={handleName}>

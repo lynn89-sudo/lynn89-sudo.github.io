@@ -5,13 +5,26 @@
         setInterval(function() {
             let clock = new Date();
             let hour = clock.getUTCHours();
-            if (parseInt(hour) - 4 < 0) {
+            if (parseInt(hour) - 5 < 0) {
                 hour = 24 - parseInt(hour);
             }
             else {
-                hour = parseInt(hour) - 4;
+                hour = parseInt(hour) - 5;
             }
-            time = hour + ":" + clock.getUTCMinutes() + ":" + clock.getUTCSeconds();
+            
+            let min = clock.getUTCMinutes();
+            let sec = clock.getUTCSeconds();
+            if (parseInt(hour) < 10) {
+                hour = "0" + hour;
+            }
+            if (parseInt(min) < 10) {
+                min = "0" + min;
+            }
+            if (parseInt(sec) < 10) {
+                sec = "0" + sec;
+            }
+            
+            time = hour + ":" + min + ":" + sec;
         }, 1000);
     })
 </script>
@@ -36,6 +49,7 @@
             padding: 10px;
             border-radius: 20px;
             animation: pulse 2s infinite;
+            font-family: Space Grotesk, Futura;
         }
     }
 </style>

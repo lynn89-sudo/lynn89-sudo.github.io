@@ -1,0 +1,33 @@
+<script>
+    import { onMount } from "svelte";
+    import { fly } from 'svelte/transition';
+
+   let prop = $props();
+
+   let activate = $state(false);
+   onMount(function() {
+    setTimeout(function() {
+        activate = true;
+    })
+   }, 1200)
+</script>
+<style>
+    div {
+        position: absolute;
+        top: 0%;
+        left: 20%;
+        right: 20%;
+        background-color: pink;
+        color: rgb(71, 11, 46);
+        height: 50px;
+        padding: 10px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        z-index: 1000;
+    }
+</style>
+{#if activate}
+    <div transition:fly={{y:-200, delay: 2500}}>
+        <h2>{prop.loc}</h2>
+    </div>
+{/if}
