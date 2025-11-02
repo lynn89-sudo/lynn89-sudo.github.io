@@ -129,6 +129,16 @@
         }
 
         @media screen and (max-width: 900px) {
+            #graphic-graphic {
+                font-size: 70px;
+            }
+        }
+        @media screen and (max-width: 650px) {
+            #graphic-graphic {
+                font-size: 45px;
+            }
+        }
+        @media screen and (max-width: 900px) {
             #graphic-design {
                 font-size: 70px;
             }
@@ -179,6 +189,11 @@
                 font-size: 70px;
             }
         }
+        @media screen and (max-width: 650px) {
+            #research-researcher {
+                font-size: 450px;
+            }
+        }
     }
     #research {
         background-color: rgb(73, 5, 82);
@@ -212,7 +227,7 @@
         }
     }
 </style>
-<br><br><br><br>
+<br><br><br><br><br><br>
 {#if activate}
     <h1 translate="no" transition:fly={{y:-200, duration: 1000}} id="name">I'M LYNN</h1>
     <h4 id="pronouns"><span transition:slide>She/They</span></h4>
@@ -269,7 +284,7 @@
         </div>
          <div id="graphic">
             <br>
-            <h2><span style:color="rgb(212, 211, 0)">I'M A</span><br>GRAPHIC <span id="graphic-design">DESIGNER</span></h2>
+            <h2><span style:color="rgb(212, 211, 0)">I'M A</span><br><span id="graphic-graphic">GRAPHIC</span> <span id="graphic-design">DESIGNER</span></h2>
             <h4>Fun fact: I use Keynote for over 90% of my graphic design work.</h4>
             <br>
             <button style:background-color="gold" style:color="rgb(107, 107, 1)" onclick={() => {window.location.href = base + "/musee"}}>See some of my work</button>

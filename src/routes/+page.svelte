@@ -77,6 +77,8 @@
     }
 
     h1 {
+        margin-right: 10px;
+        margin-left: 10px;
         @media screen and (min-width: 800px) {
             span {
                 background-color: rgb(89, 60, 109);
