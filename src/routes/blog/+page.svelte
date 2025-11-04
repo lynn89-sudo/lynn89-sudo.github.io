@@ -103,14 +103,14 @@
         }
     }
 </style>
-<Label loc="The Hacklyn Times" returnTo = "square" />
+<Label loc="Hacklyn Times" returnTo = "square" />
 <div style:height=150px><h1 style:opacity=0>Scroll down</h1></div>
 {#if activate}
     <table>
         <tbody>
             <tr>
                 <td id="profile-row">
-                    <h2 transition:slide={{y:-200, duration:700, delay:600}}>LYNN'S BLOG</h2>
+                    <h2 transition:slide={{y:-200, duration:700, delay:1400}}>LYNN'S BLOG</h2>
                     <h3>[Profile goes here]</h3>
                 </td>
                 <td transition:fly={{x:300, duration:700, delay:100}} id="posts-row">
@@ -119,6 +119,7 @@
                             <a href = '{base}/blog/{post.slug}'>
                                 <div class="post">
                                     <h2><span>{post.title}</span></h2>
+                                    <br>
                                     <h3>{post.desc}</h3>
                                     <br>
                                     <h5><span>{post.date}</span></h5>
