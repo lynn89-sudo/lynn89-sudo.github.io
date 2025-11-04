@@ -24,6 +24,7 @@
     let date = $state("");
     let desc = $state("");
     let postContent = $state("");
+    let live = $state(false);
 
     let finalItemList = $state([]);
     onMount(function() {
@@ -51,11 +52,13 @@
                 let itemdate = doc.querySelector("date").textContent;
                 let itemdesc = doc.querySelector("desc").textContent;
                 let itemslug = doc.querySelector("slug").textContent;
+                let itemlive = doc.querySelector("live").textContent;
                 finalItemList.push({
                     "title": itemtitle,
                     "desc": itemdesc,
                     "date": itemdate,
-                    "slug": itemslug
+                    "slug": itemslug,
+                    "live": itemlive
                 })
                 for (let i = 0; i < finalItemList.length; i++) {
                     if (finalItemList[i].slug == slug) {
@@ -64,6 +67,9 @@
                         title = selectedPost.title;
                         desc = selectedPost.desc;
                         date = selectedPost.date;
+                        if (selectedPost.live != null) {
+                            live = true;
+                        }
                         setTimeout(() => {activate = true;}, 100);
                         //console.log(title, selectedPost, selectedPost.title)
                         break;
@@ -103,6 +109,8 @@
         font-family: Space Grotesk, Futura !important;
         margin-top: 40px;
         font-size: 15px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     #date {
@@ -123,16 +131,51 @@
         border-top-left-radius: 30px;
         color: white;
     }
+
+    @keyframes pulse {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    #live {
+        #live-span {
+            color: white;
+            background-color: rgb(126, 34, 34);
+            padding: 15px;
+            border-radius: 20px;
+            font-family: Space Grotesk, Futura;
+
+            span {
+                animation: pulse 2s infinite ease-in-out;
+                margin-right: 10px;
+            }
+        }
+    }
 </style>
 <Label loc="Hacklyn Times" returnTo = "blog" />
 <div style:height=150px><h1 style:opacity=0>Scroll down</h1></div>
 {#if activate}
     <h1 transition:slide={{delay: 200, duration:800}}>{title}</h1><br>
     <h2 id="date"><span transition:slide={{delay: 200, duration:800}}>{date}</span></h2>
+    <br><br>
+    {#if live}
+        <h2 id="live"><span id="live-span" transition:slide={{delay: 300, duration:800}}><span>●</span>Live Updates</span></h2>
+        <br><br>
+    {/if}
     <h3 id="desc" transition:fly={{y:200, delay:700, duration:700}}><i>{desc}</i></h3>
     <br><br><br>
     <div id="content" transition:slide={{delay:1800}}>
+        <br>
         {@html postContent}
+        <br>
+        <h3 style:font-family="Playwrite DK Loopet">- lynn</h3>
+
     </div>
     <Footer />
 {/if}
