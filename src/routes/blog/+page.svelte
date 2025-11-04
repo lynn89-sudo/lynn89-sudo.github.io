@@ -92,6 +92,7 @@
         padding-bottom: 30px;
         border-top-left-radius: 30px;
         border-bottom-left-radius: 30px;
+        margin-bottom: 15px;
         h3 {
             font-family: Space Grotesk, Futura;
         }

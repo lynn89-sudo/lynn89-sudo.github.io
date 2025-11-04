@@ -67,7 +67,7 @@
                         title = selectedPost.title;
                         desc = selectedPost.desc;
                         date = selectedPost.date;
-                        if (selectedPost.live != null) {
+                        if (selectedPost.live == "true") {
                             live = true;
                         }
                         setTimeout(() => {activate = true;}, 100);
