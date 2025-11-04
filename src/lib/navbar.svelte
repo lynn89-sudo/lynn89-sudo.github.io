@@ -30,6 +30,12 @@
         background-color: rgba(255, 192, 203, 0.89);
         z-index: 1000;
     }
+    @media screen and (max-width: 880px) {
+        #navbar {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
 </style>
 {#if active}
     <div id="navbar" transition:fly={{y:100, duration:500}}>
