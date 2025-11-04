@@ -145,9 +145,9 @@
 <div style:height=150px><h1 style:opacity=0>Scroll down</h1></div>
 {#if activate}
     <div id="mobile-profile-row">
-        <h2 transition:slide={{y: 200, duration:700, delay:1000}}>LYNN'S BLOG</h2>
+        <h2 transition:slide={{y: 200, duration:700}}>LYNN'S BLOG</h2>
         <br>
-        <div transition:fly={{ y: 300, duration:700, delay:1400}}>
+        <div transition:fly={{ y: 300, duration:700, delay:300}}>
             <button id="rss-button" onclick={() => {window.location.href = "https://hacklynnest.hackclub.app/rss.xml"}}>RSS Feed <span class="material-symbols-outlined" translate="no">rss_feed</span></button>
             <form>
                 <h4>Search by Title</h4><br>

@@ -14,7 +14,7 @@
 <style>
     div {
         width: 100%;
-        height: 130px;
+        height: 180px;
         color: white;
         background-color: rgb(179, 90, 179);
         margin: 0;
@@ -47,6 +47,9 @@
                     <td>
                         <nav><a href = "{base}/square" >Home</a> | <a href = "{base}/blog" >Blog</a></nav>
                     </td>
+                </tr>
+                <tr>
+                    <td style:font-family="Playwrite DK Loopet"><br>Built on SvelteKit</td>
                 </tr>
             </tbody>
         </table>
