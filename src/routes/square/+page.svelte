@@ -138,16 +138,6 @@
                 font-size: 45px;
             }
         }
-        @media screen and (max-width: 900px) {
-            #graphic-design {
-                font-size: 70px;
-            }
-        }
-        @media screen and (max-width: 650px) {
-            #graphic-design {
-                font-size: 45px;
-            }
-        }
     }
     
     #language {
@@ -229,7 +219,7 @@
 </style>
 <br><br><br><br><br><br>
 {#if activate}
-    <h1 translate="no" transition:fly={{y:-200, duration: 1000}} id="name">I'M LYNN</h1>
+    <h1 translate="no" transition:fly={{y:-200, duration: 1000}} id="name">I'M LYNN</h1><br>
     <h4 id="pronouns"><span transition:slide>She/They</span></h4>
     <br><br>
     <svg width="100" height="100" viewBox="0 0 100 100">
@@ -276,18 +266,18 @@
             <br>
             <h2><span style:color="rgb(235, 128, 121)">I'M A</span><br>WEB <span id="web-dev">DEVELOPER</span></h2>
             <h4>From local clubs to a global non-profit, my impact has been on a wide scale. I primarily use SvelteKit.</h4>
-            <br>
-            <button style:background-color="darkred">See some of my work</button>
+            <!--<br>
+            <button style:background-color="darkred">See some of my work</button>-->
             <br> <br> <br>
             <img src="svelte.png" alt="Svelte Logo" />
             <!--<img src="ny.jpg" alt="Statue of Liberty" />-->
         </div>
          <div id="graphic">
             <br>
-            <h2><span style:color="rgb(212, 211, 0)">I'M A</span><br><span id="graphic-graphic">GRAPHIC</span> <span id="graphic-design">DESIGNER</span></h2>
+            <h2><span style:color="rgb(212, 211, 0)">I'M A</span><br><span id="graphic-graphic">GRAPHIC DESIGNER</span></h2>
             <h4>Fun fact: I use Keynote for over 90% of my graphic design work.</h4>
-            <br>
-            <button style:background-color="gold" style:color="rgb(107, 107, 1)" onclick={() => {window.location.href = base + "/musee"}}>See some of my work</button>
+            <!--<br>
+            <button style:background-color="gold" style:color="rgb(107, 107, 1)" onclick={() => {window.location.href = base + "/museum"}}>See some of my work</button>-->
             <br> <br> <br>
             <img src="vogels/vogels.png" alt="Birds" />
             <!--<img src="ny.jpg" alt="Statue of Liberty" />-->

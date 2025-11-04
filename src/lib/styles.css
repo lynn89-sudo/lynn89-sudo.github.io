@@ -9,6 +9,11 @@ h4, h5, h6, p {
     font-family: Space Grotesk, Futura;
 }
 
+nav a {
+    color: white;
+    font-family: Space Grotesk, Futura;
+}
+
 form {
     background-color: rgb(73, 2, 73);
     padding: 20px;

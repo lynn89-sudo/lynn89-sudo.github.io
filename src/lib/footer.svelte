@@ -12,7 +12,7 @@
 <style>
     div {
         width: 100%;
-        height: 80px;
+        height: 130px;
         color: white;
         background-color: rgb(179, 90, 179);
         margin: 0;
@@ -33,7 +33,17 @@
                 </tr>
                 <tr>
                     <td>
-                        <h3>Test</h3>
+                        <h3>EAST COAST TIME</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ______________________
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <nav><a href = "/blog" >Blog</a></nav>
                     </td>
                 </tr>
             </tbody>

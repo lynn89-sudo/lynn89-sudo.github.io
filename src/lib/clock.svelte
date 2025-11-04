@@ -5,12 +5,18 @@
         setInterval(function() {
             let clock = new Date();
             let hour = clock.getUTCHours();
+            hour = hour - 5;
+            if (hour < 0) {
+                hour = 24 + hour;
+            }
+            /*
             if (parseInt(hour) - 5 < 0) {
                 hour = 24 - parseInt(hour);
             }
             else {
                 hour = parseInt(hour) - 5;
             }
+                */
             
             let min = clock.getUTCMinutes();
             let sec = clock.getUTCSeconds();
