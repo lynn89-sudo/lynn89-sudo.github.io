@@ -40,6 +40,6 @@
         <h2>{prop.loc}</h2>
         <button id="return" onclick = {function() {
             window.location.href = base + "/" + prop.returnTo;
-        }}><span class="material-symbols-outlined">arrow_circle_left</span></button>
+        }}><span translate="no" class="material-symbols-outlined">arrow_circle_left</span></button>
     </div>
 {/if}

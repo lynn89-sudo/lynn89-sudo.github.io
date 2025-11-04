@@ -99,7 +99,7 @@
     })
 </script>
 <svelte:head>
-    <title>Blog | The Hacklyn Times</title>
+    <title>{$page.params.slug} | Blog</title>
 </svelte:head>
 <style>
     h1 {

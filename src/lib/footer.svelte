@@ -2,6 +2,8 @@
     import Clock from "$lib/clock.svelte";
     import { onMount } from "svelte";
 
+    import { base} from "$app/paths";
+
     import { fly, slide } from "svelte/transition";
 
     let activate = $state(false);
@@ -43,7 +45,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <nav><a href = "/blog" >Blog</a></nav>
+                        <nav><a href = "{base}/square" >Home</a> | <a href = "{base}/blog" >Blog</a></nav>
                     </td>
                 </tr>
             </tbody>

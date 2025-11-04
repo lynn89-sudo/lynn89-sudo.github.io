@@ -59,4 +59,4 @@
         }
     }
 </style>
-<h2 id="clock"><span>{time}</span></h2>
+<h2 id="clock"><span translate="no">{time}</span></h2>

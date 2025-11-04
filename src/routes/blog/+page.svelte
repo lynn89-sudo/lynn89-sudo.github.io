@@ -14,7 +14,10 @@
         }, 200)
     })
 
+    let query = $state("");
+
     let finalItemList = $state([]);
+    let results = $state(0);
     onMount(function() {
         fetch ("https://hacklynnest.hackclub.app/rss.xml")
         .then((response) => {
@@ -34,6 +37,7 @@
             
             let itemList = Array.from(items);
             finalItemList = [{"link": link}];
+            results++;
             //console.log(itemList);
             itemList.forEach(doc => {
                 let title = doc.querySelector("title").textContent;
@@ -74,8 +78,32 @@
             font-size: 15px;
         }
     }
+    @keyframes pulse {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    #rss-button {
+        margin-bottom: 20px;
+        span {
+            margin-left: 10px;
+            transform: translateY(-1px);
+            animation: pulse 2s infinite ease-in-out;
+        }
+    }
     @media screen and (max-width: 880px) {
         #profile-row {
+            display: none;
+        }
+    }
+    @media screen and (min-width: 880px) {
+        #mobile-profile-row {
             display: none;
         }
     }
@@ -85,7 +113,7 @@
         color: white;
     }
     .post {
-        background-color: rgb(56, 10, 56);
+        background-color: rgb(124, 58, 119);
         color: white;
         padding: 10px;
         padding-top: 30px;
@@ -103,31 +131,76 @@
             cursor: pointer;
         }
     }
+
+    @media screen and (max-width: 880px) {
+        .post {
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+    }
 </style>
 <Label loc="Hacklyn Times" returnTo = "square" />
 <div style:height=150px><h1 style:opacity=0>Scroll down</h1></div>
 {#if activate}
+    <div id="mobile-profile-row">
+        <h2 transition:slide={{y: 200, duration:700, delay:1000}}>LYNN'S BLOG</h2>
+        <br>
+        <div transition:fly={{ y: 300, duration:700, delay:1400}}>
+            <button id="rss-button" onclick={() => {window.location.href = "https://hacklynnest.hackclub.app/rss.xml"}}>RSS Feed <span class="material-symbols-outlined" translate="no">rss_feed</span></button>
+            <form>
+                <h4>Search by Title</h4><br>
+                <input type="text" bind:value={query}>
+            </form>
+        </div>
+    </div>
     <table>
         <tbody>
             <tr>
                 <td id="profile-row">
-                    <h2 transition:slide={{y:-200, duration:700, delay:1400}}>LYNN'S BLOG</h2>
-                    <h3>[Profile goes here]</h3>
+                    <h2 transition:slide={{y: 200, duration:700, delay:1000}}>LYNN'S BLOG</h2>
+                    <br>
+                    <div transition:fly={{ y: 300, duration:700, delay:1400}}>
+                        <button id="rss-button" onclick={() => {window.location.href = "https://hacklynnest.hackclub.app/rss.xml"}}>RSS Feed <span class="material-symbols-outlined" translate="no">rss_feed</span></button>
+                        <form>
+                            <h4>Search by Title</h4><br>
+                            <input type="text" bind:value={query}>
+                        </form>
+                    </div>
                 </td>
                 <td transition:fly={{x:300, duration:700, delay:100}} id="posts-row">
-                    {#each finalItemList as post}
-                        {#if post.title != null} 
-                            <a href = '{base}/blog/{post.slug}'>
-                                <div class="post">
-                                    <h2><span>{post.title}</span></h2>
-                                    <br>
-                                    <h3>{post.desc}</h3>
-                                    <br>
-                                    <h5><span>{post.date}</span></h5>
-                                </div>
-                            </a>
-                        {/if}
-                    {/each}
+                    {#if query == ""}
+                        <h4 style:color='rgb(73, 2, 73)'>{results} post(s)</h4><br>
+                        {#each finalItemList as post}
+                            {#if post.title != null} 
+                                <a href = '{base}/blog/{post.slug}'>
+                                    <div class="post">
+                                        <h2><span>{post.title}</span></h2>
+                                        <br>
+                                        <h3>{post.desc}</h3>
+                                        <br>
+                                        <h5><span>{post.date}</span></h5>
+                                    </div>
+                                </a>
+                            {/if}
+                        {/each}
+                    {:else}
+                        <h2>Posts that match "{query}"</h2><br>
+                        {#each finalItemList as post}
+                            {#if post.title != null && post.title.indexOf(query) != -1} 
+                                <a href = '{base}/blog/{post.slug}'>
+                                    <div class="post">
+                                        <h2><span>{post.title}</span></h2>
+                                        <br>
+                                        <h3>{post.desc}</h3>
+                                        <br>
+                                        <h5><span>{post.date}</span></h5>
+                                    </div>
+                                </a>
+                            {/if}
+                        {/each}
+                    {/if}
                 </td>
             </tr>
         </tbody>
