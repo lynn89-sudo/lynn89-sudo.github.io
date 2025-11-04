@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <nav><a href = "{base}/square" >Home</a> | <a href = "{base}/blog" >Blog</a></nav>
+                        <nav><a href = "{base}/" >Home</a> | <a href = "{base}/square" >Hacklyn Square</a> | <a href = "{base}/blog" >Blog</a></nav>
                     </td>
                 </tr>
                 <tr>

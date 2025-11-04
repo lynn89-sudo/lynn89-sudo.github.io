@@ -38,7 +38,7 @@
 {#if activate}
     <div transition:fly={{y:-200, delay: 1300}}>
         <h2>{prop.loc}</h2>
-        <button id="return" onclick = {function() {
+        <button id="return" title="Return" onclick = {function() {
             window.location.href = base + "/" + prop.returnTo;
         }}><span translate="no" class="material-symbols-outlined">arrow_circle_left</span></button>
     </div>

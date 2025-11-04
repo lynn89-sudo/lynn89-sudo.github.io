@@ -4,6 +4,7 @@
 
     import Footer from "$lib/footer.svelte";
     import Label from "$lib/label.svelte";
+    import Navbar from "$lib/navbar.svelte";
 
     import { draw, fly, slide } from "svelte/transition"
 
@@ -251,9 +252,10 @@
      <br>
 {/if}
 <Label loc="Hacklyn Square" returnTo = ""/>
+<Navbar />
 <div style:height=150px><h1 style:opacity=0>Scroll down</h1></div>
 {#if activate}
-     <div transition:fly={{y:200, delay: 2000}}>
+     <div transition:fly={{y:200, delay: 1000}}>
         <div id="new-york">
             <br>
             <h2><span style:color="lightgreen">I'M FROM</span><br>NEW YORK STATE </h2>

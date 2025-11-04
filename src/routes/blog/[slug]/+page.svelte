@@ -8,6 +8,7 @@
 
     import Footer from "$lib/footer.svelte";
     import Label from "$lib/label.svelte";
+    import Navbar from "$lib/navbar.svelte";
 
     import { draw, fly, slide } from "svelte/transition"
 
@@ -160,6 +161,7 @@
 </style>
 <Label loc="Hacklyn Times" returnTo = "blog" />
 <div style:height=150px><h1 style:opacity=0>Scroll down</h1></div>
+<Navbar />
 {#if activate}
     <h1 transition:slide={{delay: 200, duration:800}}>{title}</h1><br>
     <h2 id="date"><span transition:slide={{delay: 200, duration:800}}>{date}</span></h2>

@@ -4,6 +4,7 @@
 
     import Footer from "$lib/footer.svelte";
     import Label from "$lib/label.svelte";
+    import Navbar from "$lib/navbar.svelte";
 
     import { draw, fly, slide } from "svelte/transition"
 
@@ -155,6 +156,7 @@
             </form>
         </div>
     </div>
+    <Navbar />
     <table>
         <tbody>
             <tr>
